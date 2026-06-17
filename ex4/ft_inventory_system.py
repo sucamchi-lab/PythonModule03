@@ -20,7 +20,9 @@ def main() -> None:
         try:
             quantity = int(quantity_str)
         except ValueError:
-            print(f"Quantity error for '{item_name}': invalid literal for int() with base 10: '{quantity_str}'")
+            print(f"Quantity error for '{item_name}': "
+                  f"invalid literal for int() with base 10: "
+                  f"'{quantity_str}'")
             continue
 
         inventory[item_name] = quantity
@@ -40,8 +42,10 @@ def main() -> None:
 
         most_abundant = max(inventory, key=lambda k: inventory[k])
         least_abundant = min(inventory, key=lambda k: inventory[k])
-        print(f"Item most abundant: {most_abundant} with quantity {inventory[most_abundant]}")
-        print(f"Item least abundant: {least_abundant} with quantity {inventory[least_abundant]}")
+        print(f"Item most abundant: {most_abundant} with "
+              f"quantity {inventory[most_abundant]}")
+        print(f"Item least abundant: {least_abundant} with "
+              f"quantity {inventory[least_abundant]}")
 
     inventory.update({'Magical Staff of Poopy-Farts': 1})
     print(f"Updated inventory: {inventory}")
